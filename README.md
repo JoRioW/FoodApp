@@ -1,2 +1,3 @@
 # Food App
-Mobile Developer with Android Studio Java
+Mobile Developer using Android Studio Java with Firebase
+Self Project

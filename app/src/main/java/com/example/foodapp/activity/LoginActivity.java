@@ -79,6 +79,14 @@ public class LoginActivity extends AppCompatActivity {
         String email = emailLoginET.getText().toString();
         String password = passwordLoginET.getText().toString();
 
+        if (!email.endsWith("@gmail.com")) {
+            Toast.makeText(this, "Email must ends with @gmail.com", Toast.LENGTH_SHORT).show();
+            return;
+        }else if(password.isEmpty()) {
+            Toast.makeText(this, "Password empty", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 FirebaseUser user = mAuth.getCurrentUser();
